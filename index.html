@@ -6,6 +6,14 @@
     <title>Involve PH | Smart City Reporting</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-overlay {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), 
+                        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
@@ -22,13 +30,13 @@
         </div>
     </nav>
 
-    <section id="home" class="relative bg-blue-900 text-white py-20 px-6 text-center">
+    <section id="home" class="hero-overlay text-white py-32 px-6 text-center">
         <div class="container mx-auto">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Smart City Software for Reporting Issues [cite: 5]</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-blue-100">
                 A platform that allows citizens to report local issues like road damage, broken streetlights, and more, helping local governments respond efficiently. [cite: 6]
             </p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
+            <div class="flex flex-col md:row justify-center gap-4">
                 <a href="#report" class="bg-blue-500 hover:bg-blue-400 text-white px-8 py-3 rounded-lg font-bold text-lg transition">REPORT A PROBLEM</a> [cite: 7]
                 <a href="#services" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-3 rounded-lg font-bold text-lg transition">VIEW SERVICES</a> [cite: 8]
             </div>
@@ -40,24 +48,28 @@
             <h2 class="text-3xl font-bold mb-12">How It Works [cite: 15]</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="p-6">
-                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div> [cite: 16]
-                    <h3 class="font-bold text-xl mb-2">Citizen reports an issue</h3> [cite: 17]
-                    <p class="text-gray-600 text-sm">Submit a report with details and photos using the platform.</p> [cite: 18]
+                    <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=300" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" alt="Report">
+                    <div class="font-bold text-blue-600 text-xl mb-2">1 [cite: 16]</div>
+                    <h3 class="font-bold text-lg mb-2">Citizen reports an issue [cite: 17]</h3>
+                    <p class="text-gray-600 text-sm">Submit a report with details and photos using the platform. [cite: 18]</p>
                 </div>
                 <div class="p-6">
-                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div> [cite: 19]
-                    <h3 class="font-bold text-xl mb-2">LGU receives the report</h3> [cite: 20]
-                    <p class="text-gray-600 text-sm">The local government unit receives and logs the report instantly.</p> [cite: 21]
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=300" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" alt="Receive">
+                    <div class="font-bold text-blue-600 text-xl mb-2">2 [cite: 19]</div>
+                    <h3 class="font-bold text-lg mb-2">LGU receives the report [cite: 20]</h3>
+                    <p class="text-gray-600 text-sm">The local government unit receives and logs the report instantly. [cite: 21]</p>
                 </div>
                 <div class="p-6">
-                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div> [cite: 22]
-                    <h3 class="font-bold text-xl mb-2">Issue is reviewed</h3> [cite: 23]
-                    <p class="text-gray-600 text-sm">The report is verified and assessed by the assigned office.</p> [cite: 24]
+                    <img src="https://images.unsplash.com/photo-1454165833767-1316b3693021?auto=format&fit=crop&q=80&w=300" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" alt="Review">
+                    <div class="font-bold text-blue-600 text-xl mb-2">3 [cite: 22]</div>
+                    <h3 class="font-bold text-lg mb-2">Issue is reviewed [cite: 23]</h3>
+                    <p class="text-gray-600 text-sm">The report is verified and assessed by the assigned office. [cite: 24]</p>
                 </div>
                 <div class="p-6">
-                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div> [cite: 25]
-                    <h3 class="font-bold text-xl mb-2">Action is taken</h3> [cite: 26]
-                    <p class="text-gray-600 text-sm">The issue is resolved and progress is updated for citizens.</p> [cite: 27]
+                    <img src="https://images.unsplash.com/photo-1581578731522-745d05ad9a2d?auto=format&fit=crop&q=80&w=300" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" alt="Resolve">
+                    <div class="font-bold text-blue-600 text-xl mb-2">4 [cite: 25]</div>
+                    <h3 class="font-bold text-lg mb-2">Action is taken [cite: 26]</h3>
+                    <p class="text-gray-600 text-sm">The issue is resolved and progress is updated for citizens. [cite: 27]</p>
                 </div>
             </div>
         </div>
@@ -67,23 +79,32 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12">Our Services [cite: 52]</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <i class="fas fa-road text-4xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">ROAD DAMAGE</h3> [cite: 54]
-                    <p class="text-gray-600 mb-6">Report potholes, cracks or other road damage in your area.</p> [cite: 55]
-                    <a href="#report" class="text-blue-600 font-bold hover:underline">REPORT AN ISSUE</a> [cite: 60]
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=500" class="w-full h-48 object-cover" alt="Road Damage">
+                    <div class="p-8 text-center">
+                        <i class="fas fa-road text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">ROAD DAMAGE [cite: 54]</h3>
+                        <p class="text-gray-600 mb-6">Report potholes, cracks or other road damage in your area. [cite: 55]</p>
+                        <a href="#report" class="text-blue-600 font-bold hover:underline">REPORT AN ISSUE [cite: 60]</a>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <i class="fas fa-lightbulb text-4xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">BROKEN STREETLIGHTS</h3> [cite: 56]
-                    <p class="text-gray-600 mb-6">Help us tracing broken street lights.</p> [cite: 57]
-                    <a href="#report" class="text-blue-600 font-bold hover:underline">REPORT AN ISSUE</a> [cite: 61]
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1471958680802-1345a694ba6d?auto=format&fit=crop&q=80&w=500" class="w-full h-48 object-cover" alt="Broken Streetlights">
+                    <div class="p-8 text-center">
+                        <i class="fas fa-lightbulb text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">BROKEN STREETLIGHTS [cite: 56]</h3>
+                        <p class="text-gray-600 mb-6">Help us tracing broken street lights. [cite: 57]</p>
+                        <a href="#report" class="text-blue-600 font-bold hover:underline">REPORT AN ISSUE [cite: 61]</a>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg text-center">
-                    <i class="fas fa-trash-alt text-4xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">GARBAGE ISSUE</h3> [cite: 58]
-                    <p class="text-gray-600 mb-6">Report uncollected or improperly disposed garbage in your area.</p> [cite: 59]
-                    <a href="#report" class="text-blue-600 font-bold hover:underline">REPORT AN ISSUE</a> [cite: 62]
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=500" class="w-full h-48 object-cover" alt="Garbage Issue">
+                    <div class="p-8 text-center">
+                        <i class="fas fa-trash-alt text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">GARBAGE ISSUE [cite: 58]</h3>
+                        <p class="text-gray-600 mb-6">Report uncollected or improperly disposed garbage in your area. [cite: 59]</p>
+                        <a href="#report" class="text-blue-600 font-bold hover:underline">REPORT AN ISSUE [cite: 62]</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,27 +114,29 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-12">Latest News [cite: 31]</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="border rounded-lg overflow-hidden">
+                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd937c9be55a?auto=format&fit=crop&q=80&w=500" class="w-full h-40 object-cover" alt="Clean up">
                     <div class="p-6">
                         <span class="text-xs font-bold text-blue-600 uppercase">Community</span>
-                        <h4 class="text-xl font-bold mt-2">Community Clean-Up Drive in Bulacan</h4> [cite: 34]
-                        <p class="text-gray-600 mt-2 text-sm">Local residents and volunteers joined clean-up drive to promote a cleaner and safer community.</p> [cite: 35]
-                        <button class="mt-4 text-blue-600 font-bold">Read More &rarr;</button> [cite: 36]
+                        <h4 class="text-xl font-bold mt-2">Community Clean-Up Drive in Bulacan [cite: 34]</h4>
+                        <p class="text-gray-600 mt-2 text-sm">Local residents and volunteers joined clean-up drive to promote a cleaner and safer community. [cite: 35]</p>
+                        <button class="mt-4 text-blue-600 font-bold">Read More &rarr; [cite: 36]</button>
                     </div>
                 </div>
-                <div class="border rounded-lg overflow-hidden">
+                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1577416416182-f1947368c7c2?auto=format&fit=crop&q=80&w=500" class="w-full h-40 object-cover" alt="Assembly">
                     <div class="p-6">
-                        <span class="text-xs font-bold text-blue-600 uppercase">Announcement</span> [cite: 38]
-                        <h4 class="text-xl font-bold mt-2">Barangay Assembly</h4> [cite: 37]
-                        <p class="text-gray-600 mt-2 text-sm">A barangay meeting will be held to discuss community concerns and development.</p> [cite: 39]
-                        <button class="mt-4 text-blue-600 font-bold">Read More &rarr;</button> [cite: 40]
+                        <span class="text-xs font-bold text-blue-600 uppercase">Announcement [cite: 38]</span>
+                        <h4 class="text-xl font-bold mt-2">Barangay Assembly [cite: 37]</h4>
+                        <p class="text-gray-600 mt-2 text-sm">A barangay meeting will be held to discuss community concerns and development. [cite: 39]</p>
+                        <button class="mt-4 text-blue-600 font-bold">Read More &rarr; [cite: 40]</button>
                     </div>
                 </div>
                 <div class="bg-blue-600 text-white p-8 rounded-lg flex flex-col justify-center">
-                    <h4 class="text-2xl font-bold mb-4">Subscribe for Updates</h4> [cite: 44]
-                    <p class="mb-6 opacity-90">Get the latest municipal news delivered at your inbox.</p> [cite: 45]
+                    <h4 class="text-2xl font-bold mb-4">Subscribe for Updates [cite: 44]</h4>
+                    <p class="mb-6 opacity-90">Get the latest municipal news delivered at your inbox. [cite: 45]</p>
                     <input type="email" placeholder="Enter your email" class="p-3 rounded-lg text-gray-800 mb-4"> [cite: 46]
-                    <button class="bg-white text-blue-600 font-bold py-3 rounded-lg hover:bg-gray-100 transition">SUBSCRIBE</button> [cite: 47]
+                    <button class="bg-white text-blue-600 font-bold py-3 rounded-lg hover:bg-gray-100 transition">SUBSCRIBE [cite: 47]</button>
                 </div>
             </div>
         </div>
@@ -122,24 +145,23 @@
     <section id="report" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-2 text-center">Report a Problem</h2> [cite: 66]
-                <p class="text-center text-gray-500 mb-8">Bulakan, Bulacan, Philippines</p> [cite: 66]
-                
+                <h2 class="text-3xl font-bold mb-2 text-center">Report a Problem [cite: 66]</h2>
+                <p class="text-center text-gray-500 mb-8">Bulakan, Bulacan, Philippines [cite: 66]</p>
                 <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-bold mb-2">Name (Optional)</label> [cite: 67]
+                        <label class="block text-sm font-bold mb-2">Name (Optional) [cite: 67]</label>
                         <input type="text" class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold mb-2">Email *</label> [cite: 68]
+                        <label class="block text-sm font-bold mb-2">Email * [cite: 68]</label>
                         <input type="email" required class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold mb-2">Phone Number *</label> [cite: 69]
+                        <label class="block text-sm font-bold mb-2">Phone Number * [cite: 69]</label>
                         <input type="tel" required class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold mb-2">Select Issue Type *</label> [cite: 71]
+                        <label class="block text-sm font-bold mb-2">Select Issue Type * [cite: 71]</label>
                         <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
                             <option>Road Damage</option>
                             <option>Broken Streetlights</option>
@@ -147,13 +169,13 @@
                         </select>
                     </div>
                     <div class="md:col-span-2">
-                        <label class="block text-sm font-bold mb-2">Upload a Photo/Video *</label> [cite: 74]
-                        <div class="border-2 border-dashed border-gray-300 p-8 text-center rounded-lg cursor-pointer hover:border-blue-500 transition">
-                            <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
-                            <p class="text-gray-500">Click or drag to upload</p>
+                        <label class="block text-sm font-bold mb-2">Upload a Photo/Video * [cite: 74]</label>
+                        <div class="border-2 border-dashed border-gray-300 p-8 text-center rounded-lg cursor-pointer hover:border-blue-500 transition bg-gray-50">
+                            <i class="fas fa-camera text-3xl text-gray-400 mb-2"></i>
+                            <p class="text-gray-500">Click to upload photo evidence</p>
                         </div>
                     </div>
-                    <button class="md:col-span-2 bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition">SEND REPORT</button> [cite: 70]
+                    <button class="md:col-span-2 bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg">SEND REPORT [cite: 70]</button>
                 </form>
             </div>
         </div>
@@ -162,17 +184,17 @@
     <footer class="bg-blue-900 text-white py-12">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
-                <h3 class="text-2xl font-bold mb-4">Involve PH</h3> [cite: 4]
+                <h3 class="text-2xl font-bold mb-4">Involve PH [cite: 4]</h3>
                 <p class="text-blue-200">Empowering citizens to build better communities through efficient communication with local government.</p>
             </div>
             <div>
-                <h4 class="font-bold mb-4 uppercase">Contact Us</h4>
-                <p class="mb-2"><i class="fas fa-envelope mr-2"></i> civisense_solutions@gmail.com</p> [cite: 9, 75]
-                <p class="mb-2"><i class="fas fa-phone mr-2"></i> 0967 876 6789</p> [cite: 10, 76]
+                <h4 class="font-bold mb-4 uppercase text-sm tracking-widest">Contact Us</h4>
+                <p class="mb-2"><i class="fas fa-envelope mr-2 text-blue-400"></i> civisense_solutions@gmail.com [cite: 9, 75]</p>
+                <p class="mb-2"><i class="fas fa-phone mr-2 text-blue-400"></i> 0967 876 6789 [cite: 10, 76]</p>
             </div>
             <div>
-                <h4 class="font-bold mb-4 uppercase">Location</h4>
-                <p><i class="fas fa-map-marker-alt mr-2"></i> BULAKAN, BULACAN, PHILIPPINES</p> [cite: 11, 78]
+                <h4 class="font-bold mb-4 uppercase text-sm tracking-widest">Location</h4>
+                <p><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i> BULAKAN, BULACAN, PHILIPPINES [cite: 11, 78]</p>
             </div>
         </div>
         <div class="border-t border-blue-800 mt-12 pt-8 text-center text-blue-300 text-sm">
