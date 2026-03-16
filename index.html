@@ -7,198 +7,214 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .hero-overlay {
-            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), 
-                        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200');
+        .hero-section {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=1200');
             background-size: cover;
             background-position: center;
         }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-slate-50 text-slate-800 font-sans">
 
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-600">Involve PH [cite: 1]</div>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#home" class="hover:text-blue-600 transition">HOME</a> [cite: 2]
-                <a href="#how-it-works" class="hover:text-blue-600 transition">HOW IT WORKS</a> [cite: 2]
-                <a href="#services" class="hover:text-blue-600 transition">SERVICES</a> [cite: 3]
-                <a href="#news" class="hover:text-blue-600 transition">NEWS</a> [cite: 2]
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-city text-blue-600 text-2xl"></i>
+                <span class="text-2xl font-black tracking-tight text-blue-900">Involve PH</span>
             </div>
-            <a href="#report" class="bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 transition">REPORT A PROBLEM</a> [cite: 7]
+            <div class="hidden md:flex space-x-8 font-semibold text-slate-600">
+                <a href="#home" class="hover:text-blue-600 transition">HOME</a>
+                <a href="#how-it-works" class="hover:text-blue-600 transition">HOW IT WORKS</a>
+                <a href="#services" class="hover:text-blue-600 transition">SERVICES</a>
+                <a href="#news" class="hover:text-blue-600 transition">NEWS</a>
+            </div>
+            <a href="#report" class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-bold hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-200 transition-all">REPORT NOW</a>
         </div>
     </nav>
 
-    <section id="home" class="hero-overlay text-white py-32 px-6 text-center">
+    <section id="home" class="hero-section text-white py-40 px-6 text-center">
         <div class="container mx-auto">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Smart City Software for Reporting Issues [cite: 5]</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-blue-100">
-                A platform that allows citizens to report local issues like road damage, broken streetlights, and more, helping local governments respond efficiently. [cite: 6]
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">Empower Your City,<br><span class="text-blue-400">Improve Your Life.</span></h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-slate-200 leading-relaxed">
+                Involve PH is your direct line to local government. Report issues like road damage and broken lights in seconds to build a safer, smarter Bulacan.
             </p>
-            <div class="flex flex-col md:row justify-center gap-4">
-                <a href="#report" class="bg-blue-500 hover:bg-blue-400 text-white px-8 py-3 rounded-lg font-bold text-lg transition">REPORT A PROBLEM</a> [cite: 7]
-                <a href="#services" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white px-8 py-3 rounded-lg font-bold text-lg transition">VIEW SERVICES</a> [cite: 8]
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#report" class="bg-blue-500 hover:bg-blue-400 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl transition-all hover:-translate-y-1">
+                    <i class="fas fa-bullhorn mr-2"></i> START A REPORT
+                </a>
+                <a href="#services" class="bg-white/10 border-2 border-white/30 hover:bg-white hover:text-blue-900 text-white px-10 py-4 rounded-xl font-bold text-lg backdrop-blur-sm transition-all hover:-translate-y-1">
+                    EXPLORE SERVICES
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="how-it-works" class="py-20 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12">How It Works [cite: 15]</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="p-6">
-                    <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=300" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" alt="Report">
-                    <div class="font-bold text-blue-600 text-xl mb-2">1 [cite: 16]</div>
-                    <h3 class="font-bold text-lg mb-2">Citizen reports an issue [cite: 17]</h3>
-                    <p class="text-gray-600 text-sm">Submit a report with details and photos using the platform. [cite: 18]</p>
-                </div>
-                <div class="p-6">
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=300" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" alt="Receive">
-                    <div class="font-bold text-blue-600 text-xl mb-2">2 [cite: 19]</div>
-                    <h3 class="font-bold text-lg mb-2">LGU receives the report [cite: 20]</h3>
-                    <p class="text-gray-600 text-sm">The local government unit receives and logs the report instantly. [cite: 21]</p>
-                </div>
-                <div class="p-6">
-                    <img src="https://images.unsplash.com/photo-1454165833767-1316b3693021?auto=format&fit=crop&q=80&w=300" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" alt="Review">
-                    <div class="font-bold text-blue-600 text-xl mb-2">3 [cite: 22]</div>
-                    <h3 class="font-bold text-lg mb-2">Issue is reviewed [cite: 23]</h3>
-                    <p class="text-gray-600 text-sm">The report is verified and assessed by the assigned office. [cite: 24]</p>
-                </div>
-                <div class="p-6">
-                    <img src="https://images.unsplash.com/photo-1581578731522-745d05ad9a2d?auto=format&fit=crop&q=80&w=300" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-blue-100" alt="Resolve">
-                    <div class="font-bold text-blue-600 text-xl mb-2">4 [cite: 25]</div>
-                    <h3 class="font-bold text-lg mb-2">Action is taken [cite: 26]</h3>
-                    <p class="text-gray-600 text-sm">The issue is resolved and progress is updated for citizens. [cite: 27]</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-20 bg-gray-100">
+    <section id="how-it-works" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Our Services [cite: 52]</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-slate-900 mb-4">How It Works</h2>
+                <div class="w-20 h-1.5 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="group text-center">
+                    <div class="relative mb-6 inline-block">
+                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=400" class="w-32 h-32 rounded-3xl object-cover shadow-2xl group-hover:scale-105 transition-transform" alt="Step 1">
+                        <span class="absolute -bottom-4 -right-4 bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl ring-4 ring-white">1</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Submit Report</h3>
+                    <p class="text-slate-500">Capture the issue with a photo and location details.</p>
+                </div>
+                <div class="group text-center">
+                    <div class="relative mb-6 inline-block">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=400" class="w-32 h-32 rounded-3xl object-cover shadow-2xl group-hover:scale-105 transition-transform" alt="Step 2">
+                        <span class="absolute -bottom-4 -right-4 bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl ring-4 ring-white">2</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">LGU Logs Issue</h3>
+                    <p class="text-slate-500">The local government unit validates and logs your request.</p>
+                </div>
+                <div class="group text-center">
+                    <div class="relative mb-6 inline-block">
+                        <img src="https://images.unsplash.com/photo-1454165833767-1316b3693021?auto=format&fit=crop&q=80&w=400" class="w-32 h-32 rounded-3xl object-cover shadow-2xl group-hover:scale-105 transition-transform" alt="Step 3">
+                        <span class="absolute -bottom-4 -right-4 bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl ring-4 ring-white">3</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Office Review</h3>
+                    <p class="text-slate-500">Specialized teams assess the urgency and required action.</p>
+                </div>
+                <div class="group text-center">
+                    <div class="relative mb-6 inline-block">
+                        <img src="https://images.unsplash.com/photo-1581578731522-745d05ad9a2d?auto=format&fit=crop&q=80&w=400" class="w-32 h-32 rounded-3xl object-cover shadow-2xl group-hover:scale-105 transition-transform" alt="Step 4">
+                        <span class="absolute -bottom-4 -right-4 bg-emerald-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl ring-4 ring-white">4</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2 text-slate-900">Resolution</h3>
+                    <p class="text-slate-500">The issue is fixed and you're updated on the progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-4xl font-black text-slate-900">Community Updates</h2>
+                    <p class="text-slate-500 mt-2">Latest happenings in Bulakan, Bulacan.</p>
+                </div>
+                <button class="text-blue-600 font-bold hover:underline">View All News</button>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                    <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&q=80&w=500" class="w-full h-48 object-cover" alt="Road Damage">
-                    <div class="p-8 text-center">
-                        <i class="fas fa-road text-4xl text-blue-500 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-4">ROAD DAMAGE [cite: 54]</h3>
-                        <p class="text-gray-600 mb-6">Report potholes, cracks or other road damage in your area. [cite: 55]</p>
-                        <a href="#report" class="text-blue-600 font-bold hover:underline">REPORT AN ISSUE [cite: 60]</a>
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd937c9be55a?auto=format&fit=crop&q=80&w=600" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" alt="News 1">
+                        <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Community</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3 text-slate-900">Clean-Up Drive Success</h4>
+                        <p class="text-slate-600 text-sm mb-4">Over 200 volunteers joined forces last weekend to revitalize our local waterways.</p>
+                        <a href="#" class="text-blue-600 font-bold text-sm">Read Story <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                    <img src="https://images.unsplash.com/photo-1471958680802-1345a694ba6d?auto=format&fit=crop&q=80&w=500" class="w-full h-48 object-cover" alt="Broken Streetlights">
-                    <div class="p-8 text-center">
-                        <i class="fas fa-lightbulb text-4xl text-blue-600 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-4">BROKEN STREETLIGHTS [cite: 56]</h3>
-                        <p class="text-gray-600 mb-6">Help us tracing broken street lights. [cite: 57]</p>
-                        <a href="#report" class="text-blue-600 font-bold hover:underline">REPORT AN ISSUE [cite: 61]</a>
+                <div class="bg-white rounded-2xl shadow-sm overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1577416416182-f1947368c7c2?auto=format&fit=crop&q=80&w=600" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500" alt="News 2">
+                        <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Announcement</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-3 text-slate-900">Barangay Assembly 2026</h4>
+                        <p class="text-slate-600 text-sm mb-4">Join us this coming Friday to discuss the new infrastructure roadmap for the district.</p>
+                        <a href="#" class="text-blue-600 font-bold text-sm">Read Story <i class="fas fa-arrow-right ml-1"></i></a>
                     </div>
                 </div>
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=500" class="w-full h-48 object-cover" alt="Garbage Issue">
-                    <div class="p-8 text-center">
-                        <i class="fas fa-trash-alt text-4xl text-blue-500 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-4">GARBAGE ISSUE [cite: 58]</h3>
-                        <p class="text-gray-600 mb-6">Report uncollected or improperly disposed garbage in your area. [cite: 59]</p>
-                        <a href="#report" class="text-blue-600 font-bold hover:underline">REPORT AN ISSUE [cite: 62]</a>
-                    </div>
+                <div class="bg-blue-600 rounded-2xl p-8 text-white flex flex-col justify-center">
+                    <h4 class="text-3xl font-black mb-4">Stay Informed</h4>
+                    <p class="text-blue-100 mb-6">Receive emergency alerts and municipal news directly in your inbox.</p>
+                    <input type="email" placeholder="Your Email Address" class="w-full p-4 rounded-xl text-slate-900 mb-4 focus:ring-4 focus:ring-blue-300 outline-none">
+                    <button class="bg-white text-blue-600 font-black py-4 rounded-xl hover:bg-slate-100 transition-colors uppercase tracking-wider">Join Newsletter</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="news" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Latest News [cite: 31]</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1559027615-cd937c9be55a?auto=format&fit=crop&q=80&w=500" class="w-full h-40 object-cover" alt="Clean up">
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-blue-600 uppercase">Community</span>
-                        <h4 class="text-xl font-bold mt-2">Community Clean-Up Drive in Bulacan [cite: 34]</h4>
-                        <p class="text-gray-600 mt-2 text-sm">Local residents and volunteers joined clean-up drive to promote a cleaner and safer community. [cite: 35]</p>
-                        <button class="mt-4 text-blue-600 font-bold">Read More &rarr; [cite: 36]</button>
-                    </div>
-                </div>
-                <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
-                    <img src="https://images.unsplash.com/photo-1577416416182-f1947368c7c2?auto=format&fit=crop&q=80&w=500" class="w-full h-40 object-cover" alt="Assembly">
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-blue-600 uppercase">Announcement [cite: 38]</span>
-                        <h4 class="text-xl font-bold mt-2">Barangay Assembly [cite: 37]</h4>
-                        <p class="text-gray-600 mt-2 text-sm">A barangay meeting will be held to discuss community concerns and development. [cite: 39]</p>
-                        <button class="mt-4 text-blue-600 font-bold">Read More &rarr; [cite: 40]</button>
-                    </div>
-                </div>
-                <div class="bg-blue-600 text-white p-8 rounded-lg flex flex-col justify-center">
-                    <h4 class="text-2xl font-bold mb-4">Subscribe for Updates [cite: 44]</h4>
-                    <p class="mb-6 opacity-90">Get the latest municipal news delivered at your inbox. [cite: 45]</p>
-                    <input type="email" placeholder="Enter your email" class="p-3 rounded-lg text-gray-800 mb-4"> [cite: 46]
-                    <button class="bg-white text-blue-600 font-bold py-3 rounded-lg hover:bg-gray-100 transition">SUBSCRIBE [cite: 47]</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="report" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-2 text-center">Report a Problem [cite: 66]</h2>
-                <p class="text-center text-gray-500 mb-8">Bulakan, Bulacan, Philippines [cite: 66]</p>
-                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Name (Optional) [cite: 67]</label>
-                        <input type="text" class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Email * [cite: 68]</label>
-                        <input type="email" required class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Phone Number * [cite: 69]</label>
-                        <input type="tel" required class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Select Issue Type * [cite: 71]</label>
-                        <select class="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                            <option>Road Damage</option>
-                            <option>Broken Streetlights</option>
-                            <option>Garbage Issue</option>
-                        </select>
-                    </div>
-                    <div class="md:col-span-2">
-                        <label class="block text-sm font-bold mb-2">Upload a Photo/Video * [cite: 74]</label>
-                        <div class="border-2 border-dashed border-gray-300 p-8 text-center rounded-lg cursor-pointer hover:border-blue-500 transition bg-gray-50">
-                            <i class="fas fa-camera text-3xl text-gray-400 mb-2"></i>
-                            <p class="text-gray-500">Click to upload photo evidence</p>
+    <section id="report" class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-5xl mx-auto bg-slate-900 rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                <div class="md:w-2/5 relative">
+                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Contact">
+                    <div class="relative p-12 text-white h-full flex flex-col justify-center">
+                        <h2 class="text-4xl font-black mb-6">Need Immediate Help?</h2>
+                        <p class="text-slate-300 mb-8">Our support team and LGUs are active 24/7 to process your concerns.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center border border-blue-500/30">
+                                    <i class="fas fa-envelope text-blue-400"></i>
+                                </div>
+                                <span>civisense_solutions@gmail.com</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center border border-blue-500/30">
+                                    <i class="fas fa-phone text-blue-400"></i>
+                                </div>
+                                <span>0967 876 6789</span>
+                            </div>
                         </div>
                     </div>
-                    <button class="md:col-span-2 bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition shadow-lg">SEND REPORT [cite: 70]</button>
-                </form>
+                </div>
+                <div class="md:w-3/5 p-12 bg-white">
+                    <h3 class="text-3xl font-black text-slate-900 mb-8 text-center md:text-left">Submit a Problem</h3>
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Issue Type</label>
+                            <select class="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-xl focus:border-blue-500 outline-none transition-all">
+                                <option>Road Damage</option>
+                                <option>Broken Streetlights</option>
+                                <option>Garbage Collection</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Upload Proof (Photo/Video)</label>
+                            <div class="border-2 border-dashed border-slate-200 p-10 rounded-2xl text-center hover:border-blue-400 hover:bg-blue-50 transition-all cursor-pointer group">
+                                <i class="fas fa-camera text-4xl text-slate-300 group-hover:text-blue-500 mb-4"></i>
+                                <p class="text-slate-400 group-hover:text-blue-600 font-medium">Click to select files or drag and drop</p>
+                            </div>
+                        </div>
+                        <button class="md:col-span-2 bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-blue-700 shadow-xl shadow-blue-100 transition-all">SEND OFFICIAL REPORT</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-blue-900 text-white py-12">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+    <footer class="bg-slate-950 text-white py-20">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16">
             <div>
-                <h3 class="text-2xl font-bold mb-4">Involve PH [cite: 4]</h3>
-                <p class="text-blue-200">Empowering citizens to build better communities through efficient communication with local government.</p>
+                <div class="flex items-center space-x-2 mb-6">
+                    <i class="fas fa-city text-blue-500 text-3xl"></i>
+                    <span class="text-3xl font-black tracking-tighter">Involve PH</span>
+                </div>
+                <p class="text-slate-400 leading-relaxed text-lg">
+                    A smarter city begins with an involved citizen. We bridge the gap between residents and government for a better Bulacan.
+                </p>
             </div>
             <div>
-                <h4 class="font-bold mb-4 uppercase text-sm tracking-widest">Contact Us</h4>
-                <p class="mb-2"><i class="fas fa-envelope mr-2 text-blue-400"></i> civisense_solutions@gmail.com [cite: 9, 75]</p>
-                <p class="mb-2"><i class="fas fa-phone mr-2 text-blue-400"></i> 0967 876 6789 [cite: 10, 76]</p>
+                <h4 class="text-xl font-bold mb-6 text-blue-500 uppercase tracking-widest">Connect</h4>
+                <div class="flex space-x-4 mb-8">
+                    <a href="#" class="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center hover:bg-blue-600 transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="text-slate-400">Bulakan, Bulacan, Philippines</p>
             </div>
-            <div>
-                <h4 class="font-bold mb-4 uppercase text-sm tracking-widest">Location</h4>
-                <p><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i> BULAKAN, BULACAN, PHILIPPINES [cite: 11, 78]</p>
+            <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800">
+                <h4 class="text-lg font-bold mb-4">Official Partnership</h4>
+                <p class="text-slate-500 text-sm italic">"Working hand-in-hand with local government units to ensure transparency and rapid response."</p>
             </div>
         </div>
-        <div class="border-t border-blue-800 mt-12 pt-8 text-center text-blue-300 text-sm">
-            &copy; 2026 Involve PH. All rights reserved.
+        <div class="border-t border-slate-900 mt-20 pt-8 text-center text-slate-500 text-sm">
+            &copy; 2026 Involve PH. Built for the community.
         </div>
     </footer>
 
