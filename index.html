@@ -1,477 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Involve PH | Be Involved. Build a Better City.</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 
+:root {
+  --blue: #2563eb;
+  --blue-light: #3b82f6;
+  --navy: #0f172a;
+  --slate: #1e293b;
+}
+
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+h1,h2,h3,.font-display { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+/* HERO */
 .hero-section{
-background:linear-gradient(rgba(15,23,42,0.75),rgba(15,23,42,0.75)),
+background:linear-gradient(rgba(15,23,42,0.78),rgba(15,23,42,0.78)),
 url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=1200');
 background-size:cover;
 background-position:center;
 }
 
+/* HOVER */
 .hover-lift:hover{
 transform:translateY(-6px);
 transition:0.3s;
 }
 
-</style>
+/* NEWS SCROLL */
+.news-scroll{
+display:flex;
+overflow-x:auto;
+scroll-behavior:smooth;
+gap:1rem;
+}
+.news-scroll::-webkit-scrollbar{ display:none; }
 
+/* NAVBAR ACTIVE */
+.nav-link{ position:relative; padding-bottom:6px; }
+.nav-link::after{
+content:"";
+position:absolute;
+left:0; bottom:0;
+width:0%; height:3px;
+background:#2563eb;
+transition:0.3s;
+}
+.nav-link.active::after{ width:100%; }
+.nav-link.active{ color:#2563eb; font-weight:700; }
+
+/* UPLOAD BOX */
+.upload-box{
+border:2px dashed #cbd5f5;
+padding:40px;
+border-radius:14px;
+text-align:center;
+cursor:pointer;
+transition:0.3s;
+background:#f8fafc;
+}
+.upload-box:hover{ border-color:#2563eb; background:#eff6ff; }
+
+/* TRACKING */
+.track-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-received   { background:#dbeafe; color:#1d4ed8; }
+.status-review     { background:#fef3c7; color:#b45309; }
+.status-processing { background:#ede9fe; color:#6d28d9; }
+.status-resolved   { background:#dcfce7; color:#15803d; }
+.status-rejected   { background:#fee2e2; color:#b91c1c; }
+
+.timeline-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.dot-done   { background: #2563eb; }
+.dot-active { background: #f59e0b; border: 2px solid #fde68a; }
+.dot-pending{ background: #cbd5e1; }
+
+.timeline-line {
+  width: 2px;
+  background: #e2e8f0;
+  flex: 1;
+  margin: 2px auto;
+}
+.timeline-line.done { background: #2563eb; }
+
+/* FOOTER */
+.footer-wave {
+  background: var(--navy);
+}
+.footer-link:hover { color: #60a5fa; }
+
+/* Animated gradient border for tracking box */
+@keyframes borderGlow {
+  0%,100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+  50%      { box-shadow: 0 0 0 4px rgba(37,99,235,0.18); }
+}
+.track-glow { animation: borderGlow 2s ease-in-out infinite; }
+
+</style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 font-sans">
-
+<body class="bg-slate-50 font-sans">
 
 <!-- NAVBAR -->
-
 <nav class="bg-white shadow sticky top-0 z-50">
-
 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-
-<div class="flex items-center space-x-2">
-
-<i class="fas fa-city text-blue-600 text-2xl"></i>
-<span class="text-2xl font-black text-blue-900">Involve PH</span>
-
+  <div class="flex items-center space-x-2">
+    <i class="fas fa-city text-blue-600 text-2xl"></i>
+    <span class="text-2xl font-black text-blue-900">Involve PH</span>
+  </div>
+  <div class="hidden md:flex space-x-8 font-semibold text-slate-600">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#how-it-works" class="nav-link">How It Works</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#news" class="nav-link">News</a>
+    <a href="#report" class="nav-link">Report</a>
+  </div>
 </div>
-
-<div class="hidden md:flex space-x-8 font-semibold">
-
-<a href="#home" class="hover:text-blue-600">Home</a>
-<a href="#how-it-works" class="hover:text-blue-600">How It Works</a>
-<a href="#services" class="hover:text-blue-600">Services</a>
-<a href="#news" class="hover:text-blue-600">News</a>
-
-</div>
-
-<a href="#report"
-class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700">
-
-Report Now
-
-</a>
-
-</div>
-
 </nav>
 
-
-
 <!-- HERO -->
-
-<section id="home"
-class="hero-section text-white py-48 px-6 text-center">
-
+<section id="home" class="hero-section text-white py-48 px-6 text-center">
 <div class="container mx-auto">
-
-<h1 class="text-6xl md:text-7xl font-black mb-8">
-
-Be Involved.<br>
-Build a Better Community.
-
-</h1>
-
-<p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-slate-200 leading-relaxed">
-
-Involve PH empowers every citizen to take part in improving their city.
-From reporting road damage to accessing local government services,
-your voice and participation help build a smarter, safer,
-and more responsive Bulacan.
-
-</p>
-
-<div class="flex flex-col md:flex-row justify-center gap-6">
-
-<a href="#report"
-class="bg-blue-500 hover:bg-blue-400 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl hover-lift">
-
-<i class="fas fa-bullhorn mr-2"></i>
-Start a Report
-
-</a>
-
-<a href="#services"
-class="bg-white/20 border border-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-blue-900">
-
-Explore Services
-
-</a>
-
+  <h1 class="text-6xl md:text-7xl font-black mb-8">
+    Be Involved.<br>Build a Better Community.
+  </h1>
+  <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-slate-200 leading-relaxed">
+    Involve PH empowers citizens to report issues, access government services, and participate in improving their municipality.
+  </p>
+  <div class="flex flex-col md:flex-row justify-center gap-6">
+    <a href="#report" class="bg-blue-500 hover:bg-blue-400 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl hover-lift">
+      <i class="fas fa-bullhorn mr-2"></i>Start a Report
+    </a>
+    <a href="#services" class="bg-white/20 border border-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-blue-900 transition">
+      Explore Services
+    </a>
+  </div>
 </div>
-
-</div>
-
 </section>
-
-
 
 <!-- HOW IT WORKS -->
-
-<section id="how-it-works" class="py-28 bg-white">
-
-<div class="container mx-auto px-6 text-center">
-
-<h2 class="text-5xl font-black mb-6">
-
-How Involve PH Works
-
-</h2>
-
-<p class="max-w-3xl mx-auto text-lg text-slate-600 mb-20">
-
-Involve PH bridges the gap between citizens and the local government.
-By making reporting simple and transparent,
-we ensure that every concern is heard and acted upon.
-
-</p>
-
-<div class="grid md:grid-cols-4 gap-12">
-
-<div class="hover-lift">
-
-<i class="fas fa-camera text-blue-600 text-6xl mb-6"></i>
-
-<h3 class="text-xl font-bold mb-3">Submit a Report</h3>
-
-<p class="text-slate-500">
-
-Capture the issue with a photo or video
-and share its location through the platform.
-
-</p>
-
+<section id="how-it-works" class="py-36 bg-white">
+<div class="container mx-auto px-30 text-center">
+  <h2 class="text-5xl font-black mb-16">How Involve PH Works</h2>
+  <br>
+  <div class="grid md:grid-cols-4 gap-12">
+    <div class="hover-lift">
+      <i class="fas fa-camera text-blue-600 text-6xl mb-6"></i>
+      <h3 class="text-xl font-bold mb-3">Citizen reports an issue</h3>
+      <p class="text-slate-500">Submit a report with details and photos using the platform.</p>
+    </div>
+    <div class="hover-lift">
+      <i class="fas fa-building text-blue-600 text-6xl mb-6"></i>
+      <h3 class="text-xl font-bold mb-3">LGU receives the report</h3>
+      <p class="text-slate-500">The local government unit receives and logs the report instantly.</p>
+    </div>
+    <div class="hover-lift">
+      <i class="fas fa-search text-blue-600 text-6xl mb-6"></i>
+      <h3 class="text-xl font-bold mb-3">Issue is reviewed</h3>
+      <p class="text-slate-500">The report is verified and assessed by the assigned office.</p>
+    </div>
+    <div class="hover-lift">
+      <i class="fas fa-check-circle text-green-500 text-6xl mb-6"></i>
+      <h3 class="text-xl font-bold mb-3">Action is taken</h3>
+      <p class="text-slate-500">The issue is resolved and progress is updated for citizens..</p>
+    </div>
+  </div>
 </div>
-
-
-<div class="hover-lift">
-
-<i class="fas fa-building text-blue-600 text-6xl mb-6"></i>
-
-<h3 class="text-xl font-bold mb-3">LGU Receives It</h3>
-
-<p class="text-slate-500">
-
-Your report is instantly forwarded
-to the appropriate local government office.
-
-</p>
-
-</div>
-
-
-<div class="hover-lift">
-
-<i class="fas fa-search text-blue-600 text-6xl mb-6"></i>
-
-<h3 class="text-xl font-bold mb-3">Assessment</h3>
-
-<p class="text-slate-500">
-
-Authorities verify the issue
-and determine the appropriate response.
-
-</p>
-
-</div>
-
-
-<div class="hover-lift">
-
-<i class="fas fa-check-circle text-green-500 text-6xl mb-6"></i>
-
-<h3 class="text-xl font-bold mb-3">Resolution</h3>
-
-<p class="text-slate-500">
-
-The issue is resolved and citizens are
-updated with progress and completion.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
 
 <!-- SERVICES -->
-
 <section id="services" class="py-28 bg-slate-100">
-
 <div class="container mx-auto px-6 text-center">
-
-<h2 class="text-5xl font-black mb-20">
-
-City Services
-
-</h2>
-
-<div class="grid md:grid-cols-3 gap-12">
-
-<div class="bg-white p-8 rounded-xl shadow hover-lift">
-
-<i class="fas fa-file-signature text-blue-600 text-5xl mb-4"></i>
-
-<h3 class="font-bold text-xl mb-2">Business Permit Renewal</h3>
-
-<p class="text-slate-500">
-
-Renew and manage your business permits online
-without visiting the municipal office.
-
-</p>
-
+  <h2 class="text-5xl font-black mb-16">Services</h2>
+  <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6 text-left">
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-road text-blue-600 text-4xl mb-4"></i><h3 class="font-bold text-lg">Road Damage</h3><p class="text-slate-500 text-sm">Report potholes or road cracks.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-lightbulb text-yellow-500 text-4xl mb-4"></i><h3 class="font-bold text-lg">Streetlights</h3><p class="text-slate-500 text-sm">Report broken streetlights.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-trash-alt text-green-600 text-4xl mb-4"></i><h3 class="font-bold text-lg">Waste Collection</h3><p class="text-slate-500 text-sm">Garbage schedule concerns.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-file-signature text-blue-600 text-4xl mb-4"></i><h3 class="font-bold text-lg">Business Permits</h3><p class="text-slate-500 text-sm">Apply or renew permits.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-hospital text-red-500 text-4xl mb-4"></i><h3 class="font-bold text-lg">Health Services</h3><p class="text-slate-500 text-sm">Clinic schedules and programs.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-graduation-cap text-purple-500 text-4xl mb-4"></i><h3 class="font-bold text-lg">Scholarships</h3><p class="text-slate-500 text-sm">Education assistance programs.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-id-card text-blue-600 text-4xl mb-4"></i><h3 class="font-bold text-lg">Civil Registry</h3><p class="text-slate-500 text-sm">Birth and marriage certificates.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-briefcase text-blue-400 text-4xl mb-4"></i><h3 class="font-bold text-lg">PESO Employment</h3><p class="text-slate-500 text-sm">Jobs and training opportunities.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-receipt text-orange-500 text-4xl mb-4"></i><h3 class="font-bold text-lg">Treasury</h3><p class="text-slate-500 text-sm">Municipal tax payments.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-shield-alt text-gray-700 text-4xl mb-4"></i><h3 class="font-bold text-lg">Public Safety</h3><p class="text-slate-500 text-sm">Traffic and peace concerns.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-users text-pink-500 text-4xl mb-4"></i><h3 class="font-bold text-lg">Senior & PWD</h3><p class="text-slate-500 text-sm">ID and benefit registration.</p></div>
+    <div class="bg-white p-6 rounded-xl shadow hover-lift"><i class="fas fa-landmark text-blue-800 text-4xl mb-4"></i><h3 class="font-bold text-lg">Legal Assistance</h3><p class="text-slate-500 text-sm">Municipal legal consultation.</p></div>
+  </div>
 </div>
-
-
-<div class="bg-white p-8 rounded-xl shadow hover-lift">
-
-<i class="fas fa-road text-blue-600 text-5xl mb-4"></i>
-
-<h3 class="font-bold text-xl mb-2">Road Damage Reporting</h3>
-
-<p class="text-slate-500">
-
-Report potholes, cracks, or damaged roads
-to ensure safer transportation.
-
-</p>
-
-</div>
-
-
-<div class="bg-white p-8 rounded-xl shadow hover-lift">
-
-<i class="fas fa-lightbulb text-yellow-500 text-5xl mb-4"></i>
-
-<h3 class="font-bold text-xl mb-2">Streetlight Maintenance</h3>
-
-<p class="text-slate-500">
-
-Report broken streetlights and help
-keep public areas well-lit and safe.
-
-</p>
-
-</div>
-
-
-<div class="bg-white p-8 rounded-xl shadow hover-lift">
-
-<i class="fas fa-trash text-green-500 text-5xl mb-4"></i>
-
-<h3 class="font-bold text-xl mb-2">Waste Management</h3>
-
-<p class="text-slate-500">
-
-Report garbage collection issues
-or illegal dumping areas.
-
-</p>
-
-</div>
-
-
-<div class="bg-white p-8 rounded-xl shadow hover-lift">
-
-<i class="fas fa-id-card text-blue-600 text-5xl mb-4"></i>
-
-<h3 class="font-bold text-xl mb-2">Barangay Certificates</h3>
-
-<p class="text-slate-500">
-
-Request barangay clearances
-and other community documents.
-
-</p>
-
-</div>
-
-
-<div class="bg-white p-8 rounded-xl shadow hover-lift">
-
-<i class="fas fa-heart text-red-500 text-5xl mb-4"></i>
-
-<h3 class="font-bold text-xl mb-2">Emergency Assistance</h3>
-
-<p class="text-slate-500">
-
-Request immediate assistance
-for urgent community concerns.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
 
 <!-- NEWS -->
-
 <section id="news" class="py-28 bg-white">
-
 <div class="container mx-auto px-6">
-
-<h2 class="text-5xl font-black mb-20 text-center">
-
-Community News
-
-</h2>
-
-<div class="grid md:grid-cols-3 gap-10">
-
-<div class="bg-white shadow rounded-xl overflow-hidden hover-lift">
-
-<img src="https://images.unsplash.com/photo-1559027615-cd937c9be55a?auto=format&fit=crop&q=80&w=600">
-
-<div class="p-6">
-
-<h3 class="font-bold text-xl mb-2">Community Clean-Up Drive</h3>
-
-<p class="text-slate-500">
-
-Residents joined together to clean rivers
-and public spaces across Bulacan.
-
-</p>
-
+  <h2 class="text-5xl font-black mb-10 text-center">Community News</h2>
+  <div id="newsContainer" class="news-scroll mb-8">
+    <div class="bg-white rounded-xl shadow p-4 w-80 border hover-lift flex-shrink-0">
+      <img src="data:image/jpeg;base64,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" class="rounded-lg mb-3 w-full h-44 object-cover">
+      <h3 class="font-bold">Community Clean-Up Drive in Bulacan</h3>
+      <p class="text-sm text-slate-500">Local residents and volunteers joined clean-up drive to promote a cleaner and safer community.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow p-4 w-80 border hover-lift flex-shrink-0">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPn3_6bKnjWX9pn1vK2tarwn0IO85OSb2S0w&s" class="rounded-lg mb-3 w-full h-44 object-cover">
+      <h3 class="font-bold">Barangay Assembly Announcement</h3>
+      <p class="text-sm text-slate-500">A barangay meeting will be held to discuss community concerns and development.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow p-4 w-80 border hover-lift flex-shrink-0">
+      <img src="data:image/jpeg;base64,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" class="rounded-lg mb-3 w-full h-44 object-cover">
+      <h3 class="font-bold">Local Events and Activities Update</h3>
+      <p class="text-sm text-slate-500">Upcoming events and activities in the community are scheduled this month.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow p-4 w-80 border hover-lift flex-shrink-0">
+      <img src="data:image/png;base64,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" class="rounded-lg mb-3 w-full h-44 object-cover">
+      <h3 class="font-bold">Scholarship Program</h3>
+      <p class="text-sm text-slate-500">New grants available for students.</p>
+    </div>
+  </div>
+  <div class="flex justify-between">
+    <button onclick="scrollNews(-320)" class="px-6 py-2 bg-blue-600 text-white rounded-lg">← Previous</button>
+    <button onclick="scrollNews(320)" class="px-6 py-2 bg-blue-600 text-white rounded-lg">Next →</button>
+  </div>
 </div>
-
-</div>
-
-
-<div class="bg-white shadow rounded-xl overflow-hidden hover-lift">
-
-<img src="https://images.unsplash.com/photo-1577416416182-f1947368c7c2?auto=format&fit=crop&q=80&w=600">
-
-<div class="p-6">
-
-<h3 class="font-bold text-xl mb-2">Barangay Assembly</h3>
-
-<p class="text-slate-500">
-
-Local leaders gathered with citizens
-to discuss community development plans.
-
-</p>
-
-</div>
-
-</div>
-
-
-<div class="bg-white shadow rounded-xl overflow-hidden hover-lift">
-
-<img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&q=80&w=600">
-
-<div class="p-6">
-
-<h3 class="font-bold text-xl mb-2">Tree Planting Program</h3>
-
-<p class="text-slate-500">
-
-Students and volunteers planted hundreds
-of trees to promote environmental care.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
-
-
 
 <!-- REPORT -->
-
 <section id="report" class="py-28 bg-slate-100">
-
 <div class="container mx-auto px-6">
+  <h2 class="text-5xl font-black mb-4 text-center">Report & Track</h2>
+  <p class="text-center text-slate-500 mb-12">Submit a new report or check the status of an existing one.</p>
 
-<h2 class="text-5xl font-black mb-12 text-center">
+  <!-- TABS -->
+  <div class="max-w-5xl mx-auto">
+    <div class="flex gap-2 mb-8 bg-white p-1.5 rounded-2xl shadow w-fit mx-auto">
+      <button id="tab-submit" onclick="switchTab('submit')"
+        class="tab-btn px-7 py-3 rounded-xl font-bold text-sm transition-all bg-blue-600 text-white shadow">
+        <i class="fas fa-file-alt mr-2"></i>Submit Report
+      </button>
+      <button id="tab-track" onclick="switchTab('track')"
+        class="tab-btn px-7 py-3 rounded-xl font-bold text-sm transition-all text-slate-500 hover:text-blue-600">
+        <i class="fas fa-search mr-2"></i>Track Status
+      </button>
+    </div>
 
-Submit a Problem
+    <!-- SUBMIT FORM -->
+    <div id="panel-submit">
+      <form class="grid md:grid-cols-2 gap-10 bg-white p-10 rounded-3xl shadow">
+        <div class="space-y-6">
+          <div>
+            <label class="font-bold block mb-2">Name (Optional)</label>
+            <input type="text" class="p-4 bg-slate-50 border rounded-xl w-full">
+          </div>
+          <div>
+            <label class="font-bold block mb-2">Issue Type</label>
+            <select class="p-4 bg-slate-50 border rounded-xl w-full">
+              <option>Power Interruption</option>
+              <option>Garbage Collection</option>
+              <option>Road Damage</option>
+              <option>Broken Streetlights</option>
+              <option>Water Supply</option>
+            </select>
+          </div>
+          <div>
+            <label class="font-bold block mb-2">Location</label>
+            <iframe
+              src="https://maps.google.com/maps?q=Bulacan%20Philippines&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="100%" height="220" style="border:0;border-radius:12px" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div>
+            <label class="font-bold block mb-2">Contact Number</label>
+            <input type="text" class="p-4 bg-slate-50 border rounded-xl w-full">
+          </div>
+          <div>
+            <label class="font-bold block mb-2">Email</label>
+            <input type="email" class="p-4 bg-slate-50 border rounded-xl w-full">
+          </div>
+          <div>
+            <label class="font-bold block mb-2">Upload Photo or Video</label>
+            <div class="upload-box" onclick="document.getElementById('fileInput').click()">
+              <i class="fas fa-camera text-4xl text-blue-600 mb-3"></i>
+              <p class="text-slate-500">Click to upload evidence</p>
+              <input id="fileInput" type="file" accept="image/*,video/*" hidden>
+            </div>
+          </div>
+          <button type="button" onclick="submitDemoReport()"
+            class="bg-blue-600 text-white font-bold py-5 rounded-xl hover:bg-blue-700 w-full transition">
+            <i class="fas fa-paper-plane mr-2"></i>Send Report
+          </button>
+        </div>
+      </form>
+    </div>
 
-</h2>
+    <!-- TRACK PANEL -->
+    <div id="panel-track" class="hidden">
+      <div class="bg-white p-10 rounded-3xl shadow">
+        <div class="max-w-xl mx-auto">
+          <p class="text-slate-600 mb-6 text-center">Enter your tracking number to view the current status and the department handling your report.</p>
 
-<form class="max-w-3xl mx-auto grid gap-6">
+          <!-- INPUT -->
+          <div class="flex gap-3 mb-8">
+            <input id="trackInput" type="text" placeholder="e.g. IPH-2026-00142"
+              class="track-input flex-1 p-4 border-2 border-slate-200 rounded-xl font-mono text-slate-700 text-lg transition"
+              onkeydown="if(event.key==='Enter') trackReport()">
+            <button onclick="trackReport()"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-7 py-4 rounded-xl font-bold transition flex items-center gap-2">
+              <i class="fas fa-search"></i> Track
+            </button>
+          </div>
 
-<input type="text" placeholder="Name (Optional)" class="p-4 border rounded-lg">
+          <!-- DEMO HINTS -->
+          <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-8 text-sm text-blue-700">
+            <p class="font-bold mb-2"><i class="fas fa-lightbulb mr-1 text-yellow-500"></i> Try these sample tracking numbers:</p>
+            <div class="flex flex-wrap gap-2 mt-1">
+              <button onclick="fillTrack('IPH-2026-00142')" class="bg-white border border-blue-200 rounded-lg px-3 py-1 font-mono hover:bg-blue-100 transition">IPH-2026-00142</button>
+              <button onclick="fillTrack('IPH-2026-00089')" class="bg-white border border-blue-200 rounded-lg px-3 py-1 font-mono hover:bg-blue-100 transition">IPH-2026-00089</button>
+              <button onclick="fillTrack('IPH-2026-00201')" class="bg-white border border-blue-200 rounded-lg px-3 py-1 font-mono hover:bg-blue-100 transition">IPH-2026-00201</button>
+              <button onclick="fillTrack('IPH-2026-00055')" class="bg-white border border-blue-200 rounded-lg px-3 py-1 font-mono hover:bg-blue-100 transition">IPH-2026-00055</button>
+            </div>
+          </div>
 
-<input type="text" placeholder="Contact Number" class="p-4 border rounded-lg">
-
-<input type="email" placeholder="Email Address" class="p-4 border rounded-lg">
-
-<select class="p-4 border rounded-lg">
-
-<option>Road Damage</option>
-<option>Broken Streetlights</option>
-<option>Garbage Issue</option>
-
-</select>
-
-
-<label class="font-bold">Select Location</label>
-
-<iframe
-width="100%"
-height="250"
-class="rounded-xl"
-src="https://maps.google.com/maps?q=bulacan&t=&z=13&ie=UTF8&iwloc=&output=embed">
-</iframe>
-
-
-<label class="font-bold">Upload Photo or Video</label>
-
-<input type="file" accept="image/*,video/*">
-
-
-<button
-class="bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700">
-
-Send Report
-
-</button>
-
-</form>
-
+          <!-- RESULT -->
+          <div id="trackResult" class="hidden"></div>
+          <div id="trackError" class="hidden bg-red-50 border border-red-200 rounded-2xl p-6 text-center">
+            <i class="fas fa-exclamation-circle text-red-400 text-4xl mb-3"></i>
+            <p class="font-bold text-red-700 text-lg">Tracking Number Not Found</p>
+            <p class="text-red-500 text-sm mt-1">Please check the number and try again.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
 </section>
 
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer-wave text-white" style="background: #0f172a;">
 
+  <!-- Top wave decoration -->
+  <div style="background:#f1f5f9; line-height:0;">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:60px;">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#0f172a"/>
+    </svg>
+  </div>
 
-<footer class="bg-slate-900 text-white py-10 text-center">
+  <div class="container mx-auto px-6 pt-10 pb-6">
+    <div class="grid md:grid-cols-4 gap-10 pb-10 border-b border-slate-700">
 
-<p>Bulacan Philippines</p>
-<p>Email: involve_PH@gmail.com</p>
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="bg-blue-600 rounded-lg p-2">
+            <i class="fas fa-city text-white text-xl"></i>
+          </div>
+          <span class="text-2xl font-black">Involve PH</span>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+          A citizen engagement platform empowering Filipinos to report issues and build better communities together.
+        </p>
+        <div class="flex gap-3">
+          <a href="#" class="bg-slate-800 hover:bg-blue-600 w-9 h-9 rounded-lg flex items-center justify-center transition footer-link">
+            <i class="fab fa-facebook-f text-sm"></i>
+          </a>
+          <a href="#" class="bg-slate-800 hover:bg-blue-600 w-9 h-9 rounded-lg flex items-center justify-center transition footer-link">
+            <i class="fab fa-twitter text-sm"></i>
+          </a>
+          <a href="#" class="bg-slate-800 hover:bg-blue-600 w-9 h-9 rounded-lg flex items-center justify-center transition footer-link">
+            <i class="fab fa-instagram text-sm"></i>
+          </a>
+          <a href="#" class="bg-slate-800 hover:bg-blue-600 w-9 h-9 rounded-lg flex items-center justify-center transition footer-link">
+            <i class="fab fa-youtube text-sm"></i>
+          </a>
+        </div>
+      </div>
 
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm tracking-widest uppercase text-blue-400">Quick Links</h4>
+        <ul class="space-y-3 text-slate-400 text-sm">
+          <li><a href="#home" class="footer-link hover:text-blue-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-blue-600"></i>Home</a></li>
+          <li><a href="#how-it-works" class="footer-link hover:text-blue-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-blue-600"></i>How It Works</a></li>
+          <li><a href="#services" class="footer-link hover:text-blue-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-blue-600"></i>Services</a></li>
+          <li><a href="#news" class="footer-link hover:text-blue-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-blue-600"></i>Community News</a></li>
+          <li><a href="#report" class="footer-link hover:text-blue-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-blue-600"></i>Submit a Report and Track</a></li>
+        </ul>
+      </div>
+
+      <!-- Departments -->
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm tracking-widest uppercase text-blue-400">Departments</h4>
+        <ul class="space-y-3 text-slate-400 text-sm">
+          <li class="flex items-center gap-2"><i class="fas fa-road text-xs text-blue-600"></i>Public Works</li>
+          <li class="flex items-center gap-2"><i class="fas fa-hospital text-xs text-blue-600"></i>Municipal Health</li>
+          <li class="flex items-center gap-2"><i class="fas fa-shield-alt text-xs text-blue-600"></i>Public Safety</li>
+          <li class="flex items-center gap-2"><i class="fas fa-trash text-xs text-blue-600"></i>Sanitation Office</li>
+          <li class="flex items-center gap-2"><i class="fas fa-landmark text-xs text-blue-600"></i>Civil Registry</li>
+          <li class="flex items-center gap-2"><i class="fas fa-briefcase text-xs text-blue-600"></i>PESO Office</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm tracking-widest uppercase text-blue-400">Contact Us</h4>
+        <ul class="space-y-4 text-slate-400 text-sm">
+          <li class="flex items-start gap-3">
+            <div class="bg-slate-800 rounded-lg p-2 mt-0.5 flex-shrink-0">
+              <i class="fas fa-map-marker-alt text-blue-500 text-xs"></i>
+            </div>
+            <span>Municipal Hall, Bulacan, Philippines</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="bg-slate-800 rounded-lg p-2 mt-0.5 flex-shrink-0">
+              <i class="fas fa-phone text-blue-500 text-xs"></i>
+            </div>
+            <span>(044) 762-0000<br>0917-XXX-XXXX (SMS)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="bg-slate-800 rounded-lg p-2 mt-0.5 flex-shrink-0">
+              <i class="fas fa-envelope text-blue-500 text-xs"></i>
+            </div>
+            <span>involve_PH@gmail.com</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="bg-slate-800 rounded-lg p-2 mt-0.5 flex-shrink-0">
+              <i class="fas fa-clock text-blue-500 text-xs"></i>
+            </div>
+            <span>Mon–Fri, 8:00 AM – 5:00 PM</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
+      <p>© 2026 Municipality of Bulacan. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-blue-400 transition">Privacy Policy</a>
+        <a href="#" class="hover:text-blue-400 transition">Terms of Use</a>
+        <a href="#" class="hover:text-blue-400 transition">Accessibility</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+        <span class="text-green-400 text-xs font-semibold">All Systems Operational</span>
+      </div>
+    </div>
+
+  </div>
 </footer>
+
+<script>
+
+/* ─── SAMPLE DATA ─── */
+const reports = {
+  "IPH-2026-00142": {
+    issue: "Road Damage",
+    location: "Brgy. Poblacion, near municipal hall",
+    submitted: "March 5, 2026",
+    reporter: "Juan D.",
+    department: "Department of Public Works",
+    deptIcon: "fas fa-road",
+    deptColor: "text-orange-500",
+    contact: "publics_works@bulacan.gov.ph",
+    status: "processing",
+    statusLabel: "In Progress",
+    description: "Large pothole on the main road causing danger to motorists.",
+    timeline: [
+      { label: "Report Received",      date: "Mar 5, 2026 9:14 AM",  done: true  },
+      { label: "Under Review",          date: "Mar 6, 2026 10:00 AM", done: true  },
+      { label: "Field Inspection Done", date: "Mar 8, 2026 2:30 PM",  done: true  },
+      { label: "Repair In Progress",    date: "Mar 10, 2026 8:00 AM", active: true},
+      { label: "Resolved",              date: "Pending",              done: false }
+    ]
+  },
+  "IPH-2026-00089": {
+    issue: "Broken Streetlights",
+    location: "Sitio Mabini, Brgy. San Jose",
+    submitted: "February 18, 2026",
+    reporter: "Maria S.",
+    department: "Engineering & Infrastructure Office",
+    deptIcon: "fas fa-lightbulb",
+    deptColor: "text-yellow-500",
+    contact: "engineering@bulacan.gov.ph",
+    status: "resolved",
+    statusLabel: "Resolved",
+    description: "Three consecutive streetlights were non-functional for 2 weeks.",
+    timeline: [
+      { label: "Report Received",  date: "Feb 18, 2026 7:55 AM",  done: true },
+      { label: "Under Review",      date: "Feb 19, 2026 9:00 AM",  done: true },
+      { label: "Work Order Issued", date: "Feb 20, 2026 11:00 AM", done: true },
+      { label: "Repair Completed",  date: "Feb 22, 2026 3:00 PM",  done: true },
+      { label: "Resolved",          date: "Feb 22, 2026 5:00 PM",  done: true }
+    ]
+  },
+  "IPH-2026-00201": {
+    issue: "Garbage Collection Missed",
+    location: "Brgy. Wawa, Block 4",
+    submitted: "March 12, 2026",
+    reporter: "Anonymous",
+    department: "Municipal Sanitation Office",
+    deptIcon: "fas fa-trash-alt",
+    deptColor: "text-green-600",
+    contact: "sanitation@bulacan.gov.ph",
+    status: "review",
+    statusLabel: "Under Review",
+    description: "Scheduled collection was missed for 3 consecutive pick-up days.",
+    timeline: [
+      { label: "Report Received", date: "Mar 12, 2026 6:40 PM", done: true   },
+      { label: "Under Review",    date: "Mar 13, 2026 8:00 AM", active: true },
+      { label: "Field Inspection", date: "Pending",             done: false  },
+      { label: "Action Taken",    date: "Pending",              done: false  },
+      { label: "Resolved",        date: "Pending",              done: false  }
+    ]
+  },
+  "IPH-2026-00055": {
+    issue: "Water Supply Interruption",
+    location: "Brgy. Tibig, Zone 2",
+    submitted: "January 29, 2026",
+    reporter: "Pedro R.",
+    department: "Municipal Waterworks System",
+    deptIcon: "fas fa-tint",
+    deptColor: "text-blue-500",
+    contact: "waterworks@bulacan.gov.ph",
+    status: "resolved",
+    statusLabel: "Resolved",
+    description: "No water supply for 4 days due to pipe leak.",
+    timeline: [
+      { label: "Report Received",  date: "Jan 29, 2026 5:30 PM",  done: true },
+      { label: "Under Review",      date: "Jan 30, 2026 7:00 AM",  done: true },
+      { label: "Pipe Repair Order", date: "Jan 30, 2026 2:00 PM",  done: true },
+      { label: "Repair Completed",  date: "Feb 1, 2026 4:00 PM",   done: true },
+      { label: "Resolved",          date: "Feb 1, 2026 6:00 PM",   done: true }
+    ]
+  }
+};
+
+const statusMap = {
+  received:   { cls: "status-received",   icon: "fas fa-inbox"        },
+  review:     { cls: "status-review",     icon: "fas fa-eye"          },
+  processing: { cls: "status-processing", icon: "fas fa-cogs"         },
+  resolved:   { cls: "status-resolved",   icon: "fas fa-check-circle" },
+  rejected:   { cls: "status-rejected",   icon: "fas fa-times-circle" }
+};
+
+/* ─── TAB SWITCH ─── */
+function switchTab(tab) {
+  const panels = ['submit','track'];
+  panels.forEach(p => {
+    document.getElementById('panel-'+p).classList.add('hidden');
+    const btn = document.getElementById('tab-'+p);
+    btn.classList.remove('bg-blue-600','text-white','shadow');
+    btn.classList.add('text-slate-500');
+  });
+  document.getElementById('panel-'+tab).classList.remove('hidden');
+  const active = document.getElementById('tab-'+tab);
+  active.classList.add('bg-blue-600','text-white','shadow');
+  active.classList.remove('text-slate-500');
+  if(tab==='track'){
+    document.getElementById('trackResult').classList.add('hidden');
+    document.getElementById('trackError').classList.add('hidden');
+  }
+}
+
+/* ─── FILL DEMO ─── */
+function fillTrack(num) {
+  document.getElementById('trackInput').value = num;
+  trackReport();
+}
+
+/* ─── TRACK LOGIC ─── */
+function trackReport() {
+  const raw = document.getElementById('trackInput').value.trim().toUpperCase();
+  const resultEl = document.getElementById('trackResult');
+  const errorEl  = document.getElementById('trackError');
+
+  resultEl.classList.add('hidden');
+  errorEl.classList.add('hidden');
+
+  if (!raw) return;
+
+  const data = reports[raw];
+  if (!data) {
+    errorEl.classList.remove('hidden');
+    return;
+  }
+
+  const s = statusMap[data.status] || statusMap['received'];
+
+  /* Build timeline HTML */
+  const tlHtml = data.timeline.map((step, i) => {
+    const dotClass  = step.active ? 'dot-active' : (step.done ? 'dot-done' : 'dot-pending');
+    const lineClass = step.done ? 'done' : '';
+    const textClass = step.active ? 'text-amber-700 font-bold' : (step.done ? 'text-slate-700 font-semibold' : 'text-slate-400');
+    const dateClass = step.active ? 'text-amber-500' : (step.done ? 'text-slate-500' : 'text-slate-300');
+    const isLast    = i === data.timeline.length - 1;
+
+    return `
+      <div class="flex gap-3">
+        <div class="flex flex-col items-center">
+          <div class="timeline-dot ${dotClass}"></div>
+          ${!isLast ? `<div class="timeline-line ${lineClass}" style="min-height:28px"></div>` : ''}
+        </div>
+        <div class="pb-4">
+          <p class="${textClass} text-sm">${step.label}</p>
+          <p class="${dateClass} text-xs">${step.date}</p>
+        </div>
+      </div>`;
+  }).join('');
+
+  resultEl.innerHTML = `
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden">
+
+      <!-- Header bar -->
+      <div class="bg-blue-600 px-6 py-4 flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <p class="text-blue-200 text-xs font-bold tracking-widest uppercase">Tracking Number</p>
+          <p class="text-white text-xl font-mono font-bold">${raw}</p>
+        </div>
+        <span class="status-badge ${s.cls}"><i class="${s.icon}"></i> ${data.statusLabel}</span>
+      </div>
+
+      <div class="p-6 grid md:grid-cols-2 gap-6">
+
+        <!-- Left: Details -->
+        <div class="space-y-4">
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Issue Type</p>
+            <p class="font-semibold text-slate-700">${data.issue}</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Location</p>
+            <p class="font-semibold text-slate-700">${data.location}</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Description</p>
+            <p class="text-slate-600 text-sm">${data.description}</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Date Submitted</p>
+            <p class="font-semibold text-slate-700">${data.submitted}</p>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Reported By</p>
+            <p class="font-semibold text-slate-700">${data.reporter}</p>
+          </div>
+
+          <!-- Department card -->
+          <div class="bg-white border border-blue-100 rounded-xl p-4 mt-2">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Department In Charge</p>
+            <div class="flex items-center gap-3">
+              <div class="bg-blue-50 rounded-lg p-3">
+                <i class="${data.deptIcon} ${data.deptColor} text-xl"></i>
+              </div>
+              <div>
+                <p class="font-bold text-slate-800">${data.department}</p>
+                <p class="text-xs text-slate-400 mt-0.5">${data.contact}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Timeline -->
+        <div>
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Progress Timeline</p>
+          ${tlHtml}
+        </div>
+
+      </div>
+    </div>`;
+
+  resultEl.classList.remove('hidden');
+}
+
+/* ─── DEMO SUBMIT ─── */
+function submitDemoReport() {
+  const codes = Object.keys(reports);
+  const code  = codes[Math.floor(Math.random() * codes.length)];
+  alert(`✅ Report submitted successfully!\n\nYour tracking number is:\n${code}\n\nSave this to check your report status under the "Track Status" tab.`);
+}
+
+/* ─── NAV SCROLL ACTIVE ─── */
+const sections  = document.querySelectorAll("section");
+const navLinks  = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    if (pageYOffset >= section.offsetTop - 250) current = section.getAttribute("id");
+  });
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").substring(1) === current) link.classList.add("active");
+  });
+});
+
+function scrollNews(amount) {
+  document.getElementById("newsContainer").scrollBy({ left: amount, behavior: "smooth" });
+}
+
+</script>
 
 </body>
 </html>
