@@ -123,6 +123,127 @@ background:#f8fafc;
 }
 .track-glow { animation: borderGlow 2s ease-in-out infinite; }
 
+/* ── MOBILE HAMBURGER ── */
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: #1e293b; border-radius: 2px; transition: 0.3s; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: white;
+  border-top: 1px solid #e2e8f0;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease, padding 0.3s ease;
+}
+.mobile-menu.open {
+  max-height: 400px;
+  padding: 8px 0 16px;
+}
+.mobile-menu a {
+  padding: 14px 24px;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+  display: block;
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a.active { color: #2563eb; }
+
+/* ── RESPONSIVE OVERRIDES ── */
+@media (max-width: 767px) {
+  /* Navbar */
+  .hamburger { display: flex; }
+
+  /* Hero */
+  .hero-section { padding: 80px 20px 60px; }
+  .hero-section h1 { font-size: 2.4rem !important; line-height: 1.15; }
+  .hero-section p { font-size: 1rem !important; }
+
+  /* Section headings */
+  section h2 { font-size: 2rem !important; margin-bottom: 2rem !important; }
+
+  /* How It Works – stack vertically */
+  #how-it-works .grid { grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; }
+  #how-it-works { padding: 3rem 0 !important; }
+  #how-it-works > div { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+
+  /* Services grid – 2 col on mobile */
+  #services .grid { grid-template-columns: 1fr 1fr !important; gap: 0.75rem !important; }
+  #services { padding: 3rem 0 !important; }
+
+  /* News */
+  #news { padding: 3rem 0 !important; }
+  .news-scroll > div { width: 80vw !important; min-width: 260px; }
+
+  /* Report section */
+  #report { padding: 3rem 0 !important; }
+  #panel-submit form { grid-template-columns: 1fr !important; padding: 1.5rem !important; gap: 1.25rem !important; }
+  #panel-track .bg-white { padding: 1.25rem !important; }
+  .track-input-row { flex-direction: column !important; }
+  #trackInput { width: 100% !important; }
+  #trackInput + button { width: 100% !important; justify-content: center !important; }
+
+  /* Track result grid */
+  #trackResult .grid { grid-template-columns: 1fr !important; }
+
+  /* Tab buttons */
+  .tab-btn { padding: 10px 14px !important; font-size: 0.75rem !important; }
+
+  /* Footer */
+  footer .grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  footer .pt-6 { flex-direction: column !important; text-align: center !important; gap: 1rem !important; }
+}
+
+@media (max-width: 480px) {
+  #how-it-works .grid { grid-template-columns: 1fr !important; }
+  #services .grid { grid-template-columns: 1fr 1fr !important; }
+  .hero-section h1 { font-size: 2rem !important; }
+}
+
+/* Fix track input row flex */
+.track-input-row { display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.track-input-row input { flex: 1; min-width: 0; }
+.track-input-row button { flex-shrink: 0; }
+
+/* Bottom nav bar for mobile */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: white;
+  border-top: 1px solid #e2e8f0;
+  z-index: 100;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+}
+.mobile-bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 4px 8px;
+  transition: 0.2s;
+}
+.mobile-bottom-nav a i { font-size: 1.1rem; }
+.mobile-bottom-nav a.active, .mobile-bottom-nav a:hover { color: #2563eb; }
+
+@media (max-width: 767px) {
+  .mobile-bottom-nav { display: flex; }
+  body { padding-bottom: 64px; }
+}
+
 </style>
 </head>
 
@@ -135,6 +256,7 @@ background:#f8fafc;
     <i class="fas fa-city text-blue-600 text-2xl"></i>
     <span class="text-2xl font-black text-blue-900">Involve PH</span>
   </div>
+  <!-- Desktop nav -->
   <div class="hidden md:flex space-x-8 font-semibold text-slate-600">
     <a href="#home" class="nav-link active">Home</a>
     <a href="#how-it-works" class="nav-link">How It Works</a>
@@ -142,6 +264,18 @@ background:#f8fafc;
     <a href="#news" class="nav-link">News</a>
     <a href="#report" class="nav-link">Report</a>
   </div>
+  <!-- Hamburger button -->
+  <button class="hamburger md:hidden" id="hamburgerBtn" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+<!-- Mobile dropdown menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" onclick="closeMobileMenu()">Home</a>
+  <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#news" onclick="closeMobileMenu()">News</a>
+  <a href="#report" onclick="closeMobileMenu()">Report</a>
 </div>
 </nav>
 
@@ -326,7 +460,7 @@ background:#f8fafc;
           <p class="text-slate-600 mb-6 text-center">Enter your tracking number to view the current status and the department handling your report.</p>
 
           <!-- INPUT -->
-          <div class="flex gap-3 mb-8">
+          <div class="track-input-row">
             <input id="trackInput" type="text" placeholder="e.g. IPH-2026-00142"
               class="track-input flex-1 p-4 border-2 border-slate-200 rounded-xl font-mono text-slate-700 text-lg transition"
               onkeydown="if(event.key==='Enter') trackReport()">
@@ -446,7 +580,7 @@ background:#f8fafc;
             <div class="bg-slate-800 rounded-lg p-2 mt-0.5 flex-shrink-0">
               <i class="fas fa-envelope text-blue-500 text-xs"></i>
             </div>
-            <span>involve_PH@gmail.com</span>
+            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="147d7a627b7862714b445c547379757d783a777b79">[email&#160;protected]</a></span>
           </li>
           <li class="flex items-start gap-3">
             <div class="bg-slate-800 rounded-lg p-2 mt-0.5 flex-shrink-0">
@@ -476,7 +610,16 @@ background:#f8fafc;
   </div>
 </footer>
 
-<script>
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-bottom-nav">
+  <a href="#home" class="active"><i class="fas fa-home"></i>Home</a>
+  <a href="#how-it-works"><i class="fas fa-info-circle"></i>How</a>
+  <a href="#services"><i class="fas fa-th-large"></i>Services</a>
+  <a href="#news"><i class="fas fa-newspaper"></i>News</a>
+  <a href="#report"><i class="fas fa-bullhorn"></i>Report</a>
+</nav>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
 /* ─── SAMPLE DATA ─── */
 const reports = {
@@ -717,15 +860,42 @@ window.addEventListener("scroll", () => {
   });
   navLinks.forEach(link => {
     link.classList.remove("active");
-    if (link.getAttribute("href").substring(1) === current) link.classList.add("active");
+    if (link.getAttribute("href").includes(current)) link.classList.add("active");
   });
 });
 
-function scrollNews(amount) {
-  document.getElementById("newsContainer").scrollBy({ left: amount, behavior: "smooth" });
+/* ─── NEWS SCROLL ─── */
+function scrollNews(offset) {
+  document.getElementById('newsContainer').scrollBy({ left: offset, behavior: 'smooth' });
 }
 
-</script>
+/* ─── HAMBURGER MENU ─── */
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
+function closeMobileMenu() {
+  hamburgerBtn.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}
+
+hamburgerBtn.addEventListener('click', () => {
+  hamburgerBtn.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+
+/* ─── MOBILE BOTTOM NAV ACTIVE ─── */
+const bottomLinks = document.querySelectorAll('.mobile-bottom-nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (pageYOffset >= section.offsetTop - 250) current = section.getAttribute('id');
+  });
+  bottomLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+  });
+});
+
+</script>
 </body>
 </html>
